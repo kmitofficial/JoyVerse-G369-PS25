@@ -1,0 +1,299 @@
+.fruit-guesser-container {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  z-index: 10; /* Above background video */
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Behind all content */
+}
+
+/* Facemesh Container */
+.facemesh-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.facemesh-container video {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.emotion-display {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: none; /* Hidden by default */
+}
+
+.camera-error {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.camera-error button {
+  background: #b91c1c;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.camera-error button:hover {
+  background: #991b1b;
+}
+
+/* Fruit Decorations */
+.fruit-decoration {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 5;
+}
+
+.fruit-decoration.fruit-1 {
+  top: 10%;
+  left: 5%;
+  background-image: url('/assets/apple-decoration.png');
+}
+
+.fruit-decoration.fruit-2 {
+  bottom: 10%;
+  right: 5%;
+  background-image: url('/assets/banana-decoration.png');
+}
+
+/* Start Screen */
+.start-screen {
+  text-align: center;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.5); /* Transparent */
+  backdrop-filter: blur(8px); /* Frosted glass effect */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 15; /* Above video and confetti */
+}
+
+.start-screen h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #111827; /* Darker for readability */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.start-screen p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #111827;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.video-container {
+  margin: 20px 0;
+}
+
+.demo-video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.play-demo,
+.play-again,
+.start-button {
+  background: #22c55e;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin: 10px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.play-demo:hover,
+.play-again:hover,
+.start-button:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+}
+
+/* Game Screen */
+.game-screen {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5); /* Transparent */
+  backdrop-filter: blur(8px); /* Frosted glass effect */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 15; /* Above video and confetti */
+}
+
+.game-screen h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #111827;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.game-info {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  color: #111827;
+}
+
+.game-info p {
+  margin: 5px 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.emotion-feedback {
+  color: #3b82f6;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.game-area {
+  background: rgba(243, 244, 246, 0.6); /* Slightly transparent */
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.emoji-display h2 {
+  font-size: 4rem;
+  margin: 0;
+  color: #111827;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.emoji-display p {
+  font-size: 1.2rem;
+  color: #111827;
+  margin: 10px 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.fruit-button {
+  background: #3b82f6;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+.fruit-button:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+.result-message {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #111827;
+  min-height: 24px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Confetti Canvas */
+.confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2; /* Below UI elements */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .fruit-guesser-container {
+    padding: 10px;
+  }
+
+  .facemesh-container video {
+    width: 200px;
+  }
+
+  .start-screen,
+  .game-screen {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .start-screen h1,
+  .game-screen h1 {
+    font-size: 2rem;
+  }
+
+  .emoji-display h2 {
+    font-size: 3rem;
+  }
+
+  .play-demo,
+  .play-again,
+  .start-button,
+  .fruit-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .fruit-decoration {
+    width: 40px;
+    height: 40px;
+  }
+}

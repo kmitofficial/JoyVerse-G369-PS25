@@ -1,0 +1,57 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.0rem;
+  width: 100%;
+  max-width: 28rem; /* 448px, equivalent to Tailwind's max-w-md */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-label {
+  display: block;
+  font-size: 1.5rem; /* 24px, equivalent to text-2xl */
+  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+  margin-bottom: 0.5rem; /* 8px, equivalent to mb-2 */
+  color: #4b5563; /* gray-700 */
+  width: 100%;
+  text-align: left;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem; /* py-3 px-4 */
+  border-radius: 0.5rem; /* rounded-lg */
+  font-size: 1.25rem; /* 20px, equivalent to text-xl */
+  border: 2px solid #93c5fd; /* border-blue-300 */
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #3b82f6; /* focus:border-blue-500 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); /* focus:ring focus:ring-blue-200 */
+}
+
+.error-message {
+  color: #ef4444; /* red-500 */
+  font-size: 1.25rem; /* 20px, equivalent to text-xl */
+  width: 100%;
+  text-align: center;
+}
+
+.submit-button {
+  width: 30%;
+  background-color: #3b82f6; /* bg-blue-500 */
+  color: #ffffff; /* text-white */
+  font-size: 1.5rem; /* 24px, equivalent to text-2xl */
+  padding: 0.75rem 0; /* py-3 */
+  border-radius: 0.5rem; /* rounded-lg */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out; /* transition-colors */
+}
+
+.submit-button:hover {
+  background-color: #2563eb; /* hover:bg-blue-600 */
+}

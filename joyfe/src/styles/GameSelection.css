@@ -1,0 +1,593 @@
+/* GameSelection.css */
+.selection-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%); /* Subtle gradient */
+  font-family: 'Arial', sans-serif;
+}
+
+.selection-title {
+  font-size: 2.5rem;
+  color: #1e3a8a; /* Deep blue for contrast */
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+
+.games-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 1230px;
+  width: 100%;
+  justify-content: center;
+}
+
+.game-holder {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 96px;
+}
+
+/* Visual Elements */
+.visual {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* Boggle: Letter Tiles */
+.boggle-visual .letter-tiles {
+  display: flex;
+  gap: 10px;
+}
+
+.boggle-visual .tile {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border: 2px solid #1e3a8a;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e3a8a;
+  line-height: 40px;
+  text-align: center;
+  animation: select-tile 2s infinite;
+}
+
+.boggle-visual .tile:nth-child(2) { animation-delay: 0.2s; }
+.boggle-visual .tile:nth-child(3) { animation-delay: 0.4s; }
+.boggle-visual .tile:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes select-tile {
+  0%, 100% {
+    transform: scale(1);
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.1);
+    background: #667eea;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Fruit Guesser: Panda with Banana */
+.panda-visual .head {
+  width: 100px;
+  height: 80px;
+  background: white;
+  border: 3px solid #333;
+  border-radius: 50%;
+  position: relative;
+}
+
+.panda-visual .ear {
+  width: 30px;
+  height: 30px;
+  background: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+}
+
+.panda-visual .ear.left {
+  left: 5px;
+}
+
+.panda-visual .ear.right {
+  right: 5px;
+}
+
+.panda-visual .face {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
+}
+
+.panda-visual .eyes {
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  top: 10px;
+  left: 5px;
+}
+
+.panda-visual .eyes::before,
+.panda-visual .eyes::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #333;
+  border-radius: 50%;
+}
+
+.panda-visual .eyes::before {
+  left: 0;
+}
+
+.panda-visual .eyes::after {
+  right: 0;
+}
+
+.panda-visual .nose {
+  position: absolute;
+  width: 15px;
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+  top: 30px;
+  left: 22px;
+}
+
+.panda-visual .arm {
+  position: absolute;
+  width: 50px;
+  height: 15px;
+  background: #333;
+  border-radius: 10px;
+  top: 60px;
+}
+
+.panda-visual .arm.left {
+  left: -30px;
+  transform: rotate(-30deg);
+  animation: hold-left 2s infinite;
+}
+
+.panda-visual .arm.right {
+  right: -30px;
+  transform: rotate(30deg);
+  animation: hold-right 2s infinite;
+}
+
+.panda-visual .banana {
+  position: absolute;
+  width: 30px;
+  height: 60px;
+  background: #ffee58;
+  border-radius: 20px;
+  top: -40px;
+  left: 10px;
+  transform: rotate(20deg);
+  border: 2px solid #fbc02d;
+  animation: hold-fruit 2s infinite;
+}
+
+/* Memory Game: Color-Changing Block */
+.memory-visual .color-block {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  border: 2px solid #1e3a8a;
+  animation: change-color 4s infinite;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes change-color {
+  0% { background-color: #FF5733; }
+  25% { background-color: #33FF57; }
+  50% { background-color: #3357FF; }
+  75% { background-color: #FF33A6; }
+  100% { background-color: #FF5733; }
+}
+
+/* Memory Sequence Game: Shuffling Cups */
+.sequence-visual .dots {
+  display: flex;
+  width: 120px;
+  height: 50px;
+  position: relative;
+}
+
+.sequence-visual .cup {
+  width: 30px;
+  height: 40px;
+  border: 2px solid #1e3a8a;
+  border-radius: 8px 8px 0 0;
+  position: absolute;
+  top: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease-in-out;
+}
+
+.sequence-visual .cup.red {
+  background: #FF7F7F;
+  left: 0;
+  animation: shuffle-red 3s infinite;
+}
+
+.sequence-visual .cup.blue {
+  background: #87CEEB;
+  left: 30px;
+  animation: shuffle-blue 3s infinite;
+}
+
+.sequence-visual .cup.green {
+  background: #90EE90;
+  left: 60px;
+  animation: shuffle-green 3s infinite;
+}
+
+.sequence-visual .cup.yellow {
+  background: #FFFACD;
+  left: 90px;
+  animation: shuffle-yellow 3s infinite;
+}
+
+@keyframes shuffle-red {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(90px); }
+  50% { transform: translateX(30px); }
+  75% { transform: translateX(60px); }
+}
+
+@keyframes shuffle-blue {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(60px); }
+  50% { transform: translateX(90px); }
+  75% { transform: translateX(0); }
+}
+
+@keyframes shuffle-green {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(0); }
+  50% { transform: translateX(60px); }
+  75% { transform: translateX(90px); }
+}
+
+@keyframes shuffle-yellow {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(30px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(30px); }
+}
+
+/* Game Cards */
+.game-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 15px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  height: 150px;
+  animation: glow 2s infinite, wave 4s infinite;
+}
+
+.game-card.boggle-card {
+  animation-delay: 0s;
+}
+
+.game-card.fruit-card {
+  animation-delay: 0.2s;
+}
+
+.game-card.memory-card {
+  animation-delay: 0.4s;
+}
+
+.game-card.sequence-card {
+  animation-delay: 0.6s;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 0 16px rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.game-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.game-card p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.boggle-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple-blue for Boggle */
+  background-size: 200% 200%;
+}
+
+.fruit-card {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); /* Green-cyan for Fruit Guesser */
+  background-size: 200% 200%;
+}
+
+.memory-card {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%); /* Red-orange for Memory Game */
+  background-size: 200% 200%;
+}
+
+.sequence-card {
+  background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%); /* Purple-pink for Memory Sequence */
+  background-size: 200% 200%;
+}
+
+.game-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.game-card p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 16px rgba(255, 255, 255, 0.8);
+}
+
+/* Animations */
+@keyframes hold-left {
+  0%, 100% {
+    transform: rotate(-30deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-25deg) translateY(-5px);
+  }
+}
+
+@keyframes hold-right {
+  0%, 100% {
+    transform: rotate(30deg) translateY(0);
+  }
+  50% {
+    transform: rotate(35deg) translateY(-5px);
+  }
+}
+
+@keyframes hold-fruit {
+  0%, 100% {
+    transform: rotate(20deg) translateY(0);
+  }
+  50% {
+    transform: rotate(20deg) translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .selection-container {
+    padding: 1rem;
+  }
+
+  .selection-title {
+    font-size: 2rem;
+  }
+
+  .games-grid {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .game-holder {
+    width: 280px;
+    margin-top: 88px;
+  }
+
+  .game-card {
+    padding: 1.5rem;
+    height: 140px;
+    animation: glow 2s infinite, wave 4s infinite;
+  }
+
+  .game-card.boggle-card {
+    animation-delay: 0s;
+  }
+
+  .game-card.fruit-card {
+    animation-delay: 0.2s;
+  }
+
+  .game-card.memory-card {
+    animation-delay: 0.4s;
+  }
+
+  .game-card.sequence-card {
+    animation-delay: 0.6s;
+  }
+
+  .game-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .game-card p {
+    font-size: 0.9rem;
+  }
+
+  .visual {
+    top: -72px;
+  }
+
+  .boggle-visual .tile {
+    width: 38px;
+    height: 38px;
+    font-size: 1.4rem;
+    line-height: 38px;
+    border-radius: 7px;
+  }
+
+  .panda-visual .head {
+    width: 90px;
+    height: 72px;
+    border: 2px solid #333;
+  }
+
+  .panda-visual .ear {
+    width: 28px;
+    height: 28px;
+    top: -9px;
+  }
+
+  .panda-visual .ear.left {
+    left: 4px;
+  }
+
+  .panda-visual .ear.right {
+    right: 4px;
+  }
+
+  .panda-visual .face {
+    width: 54px;
+    height: 45px;
+    top: 18px;
+    left: 18px;
+  }
+
+  .panda-visual .eyes {
+    width: 45px;
+    height: 22px;
+    top: 9px;
+    left: 4px;
+  }
+
+  .panda-visual .eyes::before,
+  .panda-visual .eyes::after {
+    width: 18px;
+    height: 18px;
+  }
+
+  .panda-visual .nose {
+    width: 13px;
+    height: 9px;
+    top: 27px;
+    left: 20px;
+  }
+
+  .panda-visual .arm {
+    width: 45px;
+    height: 13px;
+    top: 54px;
+    border-radius: 9px;
+  }
+
+  .panda-visual .banana {
+    width: 28px;
+    height: 56px;
+    top: -36px;
+    left: 9px;
+    border-radius: 18px;
+  }
+
+  .memory-visual .color-block {
+    width: 72px;
+    height: 72px;
+    border-radius: 9px;
+  }
+
+  .sequence-visual .dots {
+    width: 112px;
+    height: 48px;
+  }
+
+  .sequence-visual .cup {
+    width: 28px;
+    height: 38px;
+    border-radius: 7px 7px 0 0;
+  }
+
+  .sequence-visual .cup.red {
+    left: 0;
+  }
+
+  .sequence-visual .cup.blue {
+    left: 28px;
+  }
+
+  .sequence-visual .cup.green {
+    left: 56px;
+  }
+
+  .sequence-visual .cup.yellow {
+    left: 84px;
+  }
+
+  @keyframes shuffle-red {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(84px); }
+    50% { transform: translateX(28px); }
+    75% { transform: translateX(56px); }
+  }
+
+  @keyframes shuffle-blue {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(56px); }
+    50% { transform: translateX(84px); }
+    75% { transform: translateX(0); }
+  }
+
+  @keyframes shuffle-green {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(0); }
+    50% { transform: translateX(56px); }
+    75% { transform: translateX(84px); }
+  }
+
+  @keyframes shuffle-yellow {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(28px); }
+    50% { transform: translateX(0); }
+    75% { transform: translateX(28px); }
+  }
+}

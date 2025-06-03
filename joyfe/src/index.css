@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+.font-comic {
+  font-family: 'Comic Neue', cursive;
+}
+
+/* Improve readability for dyslexic users */
+body {
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  word-spacing: 3px;
+}

@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.emotion-tracking-container {
+  min-height: 100vh;
+  padding: 24px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.card-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px; /* Reduced padding to give more space to charts */
+  margin-bottom: 32px;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent overflow of chart content */
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-align-start {
+  align-items: flex-start;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.space-x-4 {
+  gap: 16px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-8 {
+  margin-bottom: 32px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px; /* Further reduced gap to ensure charts fit */
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4
+
+, 1fr);
+  gap: 16px;
+}
+
+.grid-2-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .grid-2-1 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .flex-row-md {
+    flex-direction: row;
+  }
+  .flex-col-md {
+    flex-direction: column;
+  }
+  .grid-4-md {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.text-dark {
+  color: #1f2937;
+}
+
+.text-gray {
+  color: #4b5563;
+}
+
+.text-indigo {
+  color: #4f46e5;
+}
+
+.text-green {
+  color: #10b981;
+}
+
+.text-amber {
+  color: #f59e0b;
+}
+
+.text-blue {
+  color: #3b82f6;
+}
+
+.text-xl {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.text-lg {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.text-sm {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.text-xs {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.emotion-card {
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.emotion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.border-happy {
+  border-left: 4px solid #10b981;
+}
+
+.border-sad {
+  border-left: 4px solid #6366f1;
+}
+
+.border-disgust {
+  border-left: 4px solid #84cc16;
+}
+
+.border-neutral {
+  border-left: 4px solid #94a3b8;
+}
+
+.border-fear {
+  border-left: 4px solid #8b5cf6;
+}
+
+.border-angry {
+  border-left: 4px solid #ef4444;
+}
+
+.border-surprised {
+  border-left: 4px solid #f59e0b;
+}
+
+.badge-happy {
+  background-color: #10b98133;
+  color: #10b981;
+}
+
+.badge-sad {
+  background-color: #6366f133;
+  color: #6366f1;
+}
+
+.badge-disgust {
+  background-color: #84cc1633;
+  color: #84cc16;
+}
+
+.badge-neutral {
+  background-color: #94a3b833;
+  color: #94a3b8;
+}
+
+.badge-fear {
+  background-color: #8b5cf633;
+  color: #8b5cf6;
+}
+
+.badge-angry {
+  background-color: #ef444433;
+  color: #ef4444;
+}
+
+.badge-surprised {
+  background-color: #f59e0b33;
+  color: #f59e0b;
+}
+
+.progress-happy {
+  background-color: #10b981;
+}
+
+.progress-sad {
+  background-color: #6366f1;
+}
+
+.progress-disgust {
+  background-color: #84cc16;
+}
+
+.progress-neutral {
+  background-color: #94a3b8;
+}
+
+.progress-fear {
+  background-color: #8b5cf6;
+}
+
+.progress-angry {
+  background-color: #ef4444;
+}
+
+.progress-surprised {
+  background-color: #f59e0b;
+}
+
+/* Static width classes for progress bars */
+.width-0 { width: 0%; }
+.width-1 { width: 1%; }
+.width-2 { width: 2%; }
+.width-3 { width: 3%; }
+.width-4 { width: 4%; }
+.width-5 { width: 5%; }
+/* ... continuing the pattern ... */
+.width-95 { width: 95%; }
+.width-96 { width: 96%; }
+.width-97 { width: 97%; }
+.width-98 { width: 98%; }
+.width-99 { width: 99%; }
+.width-100 { width: 100%; }
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  min-height: 200px;
+  max-height: 300px;
+}
+
+.bar-chart-container {
+  height: 200px; /* Reduced height specifically for the bar chart */
+  min-height: 180px;
+  max-height: 250px;
+}
+
+@media (min-width: 768px) {
+  .chart-container {
+    height: 300px;
+  }
+  .bar-chart-container {
+    height: 250px; /* Slightly smaller than the pie chart */
+  }
+}
+
+@media (min-width: 1024px) {
+  .chart-container {
+    height: 350px;
+  }
+  .bar-chart-container {
+    height: 300px; /* Adjusted for larger screens */
+  }
+}
+
+.face-mesh-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.face-mesh {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #e0e7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+.stat-box {
+  background-color: #f3e8ff;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.stat-box-indigo {
+  background-color: #e0e7ff;
+}
+
+.stat-box-green {
+  background-color: #d1fae5;
+}
+
+.stat-box-amber {
+  background-color: #fef3c7;
+}
+
+.stat-box-blue {
+  background-color: #dbeafe;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  height: 8px;
+}
+
+.progress-bar-fill {
+  height: 8px;
+  border-radius: 9999px;
+}
+
+.flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.list-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  margin-top: 2px;
+}
+
+.icon-green {
+  color: #10b981;
+}
+
+.icon-amber {
+  color: #f59e0b;
+}
+
+.icon-indigo {
+  color: #4f46e5;
+}
