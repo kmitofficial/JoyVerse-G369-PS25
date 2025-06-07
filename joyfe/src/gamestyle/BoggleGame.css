@@ -8,6 +8,7 @@ boggle-game {
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+  
 }
 
 .background-video {
@@ -83,12 +84,15 @@ boggle-game {
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   z-index: 5;
+  margin: 250px;
+
 }
 
 .start-screen h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: #1f2937;
+  
 }
 
 .video-container {
@@ -129,6 +133,9 @@ boggle-game {
   max-width: 600px;
   width: 100%;
   z-index: 5;
+  margin: 200px;
+  
+
 }
 
 .game-screen h1 {
@@ -247,7 +254,7 @@ boggle-game {
 
   .start-screen,
   .game-screen {
-    padding: 20px;
+    padding: 50px;
   }
 
   .start-screen h1,

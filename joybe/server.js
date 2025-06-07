@@ -480,6 +480,47 @@ app.get('/api/game_data', async (req, res) => {
   }
 });
 
+/*(use this route for frontend->backend->transformer (change fetch route in face mesh))
+// POST /api/emotion
+app.post('/emotion', async (req, res) => {
+  try {
+    const { landmarks } = req.body;
+
+    if (!landmarks || !Array.isArray(landmarks)) {
+      return res.status(400).json({ error: 'Invalid landmarks format' });
+    }
+
+    // Send landmarks to Python server
+    const response = await fetch('http://localhost:5000/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ landmarks }),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      return res.status(response.status).json({ error: errorText });
+    }
+
+    const result = await response.json();
+
+    if (result.error) {
+      return res.status(500).json({ error: result.error });
+    }
+
+    // Return the emotion to frontend
+    res.json({ emotion: result.emotion });
+  } catch (err) {
+    console.error('Error forwarding landmarks to Transformer:', err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+*/
+
+
 // Feedback (Group Chat)
 app.post('/api/feedback', async (req, res) => {
   const { sender, message, isSuperAdmin } = req.body;
